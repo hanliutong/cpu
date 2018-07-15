@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 112 240)
+	(text "Timer" (rect 5 0 28 10)(font "Arial" (font_size 6)))
+	(text "inst" (rect 8 208 25 220)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Set_Fi" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "Set_Fi" (rect 21 27 33 32)(font "Arial" (font_size 3)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Set_DST" (rect 0 0 18 5)(font "Arial" (font_size 3)))
+		(text "Set_DST" (rect 21 43 39 48)(font "Arial" (font_size 3)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Set_SRC" (rect 0 0 20 5)(font "Arial" (font_size 3)))
+		(text "Set_SRC" (rect 21 59 41 64)(font "Arial" (font_size 3)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Set_EXC" (rect 0 0 20 5)(font "Arial" (font_size 3)))
+		(text "Set_EXC" (rect 21 75 41 80)(font "Arial" (font_size 3)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "Set_INT" (rect 0 0 16 5)(font "Arial" (font_size 3)))
+		(text "Set_INT" (rect 21 91 37 96)(font "Arial" (font_size 3)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Crystal" (rect 0 0 14 5)(font "Arial" (font_size 3)))
+		(text "Crystal" (rect 21 107 35 112)(font "Arial" (font_size 3)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "HALT" (rect 0 0 11 5)(font "Arial" (font_size 3)))
+		(text "HALT" (rect 21 123 32 128)(font "Arial" (font_size 3)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "Start_Re" (rect 0 0 17 5)(font "Arial" (font_size 3)))
+		(text "Start_Re" (rect 21 139 38 144)(font "Arial" (font_size 3)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "Tplus1" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "Tplus1" (rect 21 155 33 160)(font "Arial" (font_size 3)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "Set0" (rect 0 0 9 5)(font "Arial" (font_size 3)))
+		(text "Set0" (rect 21 171 30 176)(font "Arial" (font_size 3)))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
+		(pt 96 32)
+		(output)
+		(text "FI" (rect 0 0 3 5)(font "Arial" (font_size 3)))
+		(text "FI" (rect 72 27 75 32)(font "Arial" (font_size 3)))
+		(line (pt 96 32)(pt 80 32))
+	)
+	(port
+		(pt 96 48)
+		(output)
+		(text "DST" (rect 0 0 9 5)(font "Arial" (font_size 3)))
+		(text "DST" (rect 66 43 75 48)(font "Arial" (font_size 3)))
+		(line (pt 96 48)(pt 80 48))
+	)
+	(port
+		(pt 96 64)
+		(output)
+		(text "SRC" (rect 0 0 10 5)(font "Arial" (font_size 3)))
+		(text "SRC" (rect 65 59 75 64)(font "Arial" (font_size 3)))
+		(line (pt 96 64)(pt 80 64))
+	)
+	(port
+		(pt 96 80)
+		(output)
+		(text "EXC" (rect 0 0 10 5)(font "Arial" (font_size 3)))
+		(text "EXC" (rect 65 75 75 80)(font "Arial" (font_size 3)))
+		(line (pt 96 80)(pt 80 80))
+	)
+	(port
+		(pt 96 96)
+		(output)
+		(text "INT" (rect 0 0 7 5)(font "Arial" (font_size 3)))
+		(text "INT" (rect 68 91 75 96)(font "Arial" (font_size 3)))
+		(line (pt 96 96)(pt 80 96))
+	)
+	(port
+		(pt 96 112)
+		(output)
+		(text "CLK" (rect 0 0 9 5)(font "Arial" (font_size 3)))
+		(text "CLK" (rect 66 107 75 112)(font "Arial" (font_size 3)))
+		(line (pt 96 112)(pt 80 112))
+	)
+	(port
+		(pt 96 128)
+		(output)
+		(text "T[7..0]" (rect 0 0 11 5)(font "Arial" (font_size 3)))
+		(text "T[7..0]" (rect 64 123 75 128)(font "Arial" (font_size 3)))
+		(line (pt 96 128)(pt 80 128)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 80 208))
+	)
+)

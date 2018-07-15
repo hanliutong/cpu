@@ -1,0 +1,14 @@
+module beat_Cycle(clk, Tpuls1,Reset,T)
+input clk, Tpuls1, Reset
+output reg [7:0]T;
+
+always @ (posedge clk)
+begin
+	if (Reset)
+	T = 8'b0000_0001;
+	else if (Tpuls1)
+	T = T<<1;
+	else 
+	T = T;
+end
+endmodule

@@ -1,0 +1,71 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 136 144)
+	(text "MAR" (rect 5 0 26 10)(font "Arial" (font_size 6)))
+	(text "inst" (rect 8 112 25 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "MAR_ABUS" (rect 0 0 27 5)(font "Arial" (font_size 3)))
+		(text "MAR_ABUS" (rect 21 27 48 32)(font "Arial" (font_size 3)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "MAR_IBUS" (rect 0 0 24 5)(font "Arial" (font_size 3)))
+		(text "MAR_IBUS" (rect 21 43 45 48)(font "Arial" (font_size 3)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "D[15..0]" (rect 0 0 15 5)(font "Arial" (font_size 3)))
+		(text "D[15..0]" (rect 21 59 36 64)(font "Arial" (font_size 3)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "IBUS_MAR" (rect 0 0 24 5)(font "Arial" (font_size 3)))
+		(text "IBUS_MAR" (rect 21 75 45 80)(font "Arial" (font_size 3)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "ABUS_OUT[15..0]" (rect 0 0 37 5)(font "Arial" (font_size 3)))
+		(text "ABUS_OUT[15..0]" (rect 62 27 99 32)(font "Arial" (font_size 3)))
+		(line (pt 120 32)(pt 104 32)(line_width 3))
+	)
+	(port
+		(pt 120 48)
+		(output)
+		(text "IBUS_OUT[15..0]" (rect 0 0 35 5)(font "Arial" (font_size 3)))
+		(text "IBUS_OUT[15..0]" (rect 64 43 99 48)(font "Arial" (font_size 3)))
+		(line (pt 120 48)(pt 104 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 104 112))
+	)
+)

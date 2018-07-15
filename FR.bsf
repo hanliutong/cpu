@@ -1,0 +1,155 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 112 208)
+	(text "FR" (rect 5 0 17 10)(font "Arial" (font_size 6)))
+	(text "inst" (rect 8 176 25 188)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_OF" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "IN_OF" (rect 21 27 33 32)(font "Arial" (font_size 3)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "IN_DF" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "IN_DF" (rect 21 43 33 48)(font "Arial" (font_size 3)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "IN_IF" (rect 0 0 10 5)(font "Arial" (font_size 3)))
+		(text "IN_IF" (rect 21 59 31 64)(font "Arial" (font_size 3)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "IN_TF" (rect 0 0 11 5)(font "Arial" (font_size 3)))
+		(text "IN_TF" (rect 21 75 32 80)(font "Arial" (font_size 3)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "IN_SF" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "IN_SF" (rect 21 91 33 96)(font "Arial" (font_size 3)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "IN_ZF" (rect 0 0 11 5)(font "Arial" (font_size 3)))
+		(text "IN_ZF" (rect 21 107 32 112)(font "Arial" (font_size 3)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "IN_AF" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "IN_AF" (rect 21 123 33 128)(font "Arial" (font_size 3)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "IN_PF" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "IN_PF" (rect 21 139 33 144)(font "Arial" (font_size 3)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "IN_CF" (rect 0 0 12 5)(font "Arial" (font_size 3)))
+		(text "IN_CF" (rect 21 155 33 160)(font "Arial" (font_size 3)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 96 32)
+		(output)
+		(text "OF" (rect 0 0 5 5)(font "Arial" (font_size 3)))
+		(text "OF" (rect 70 27 75 32)(font "Arial" (font_size 3)))
+		(line (pt 96 32)(pt 80 32))
+	)
+	(port
+		(pt 96 48)
+		(output)
+		(text "DF" (rect 0 0 5 5)(font "Arial" (font_size 3)))
+		(text "DF" (rect 70 43 75 48)(font "Arial" (font_size 3)))
+		(line (pt 96 48)(pt 80 48))
+	)
+	(port
+		(pt 96 64)
+		(output)
+		(text "IF" (rect 0 0 3 5)(font "Arial" (font_size 3)))
+		(text "IF" (rect 72 59 75 64)(font "Arial" (font_size 3)))
+		(line (pt 96 64)(pt 80 64))
+	)
+	(port
+		(pt 96 80)
+		(output)
+		(text "TF" (rect 0 0 4 5)(font "Arial" (font_size 3)))
+		(text "TF" (rect 71 75 75 80)(font "Arial" (font_size 3)))
+		(line (pt 96 80)(pt 80 80))
+	)
+	(port
+		(pt 96 96)
+		(output)
+		(text "SF" (rect 0 0 5 5)(font "Arial" (font_size 3)))
+		(text "SF" (rect 70 91 75 96)(font "Arial" (font_size 3)))
+		(line (pt 96 96)(pt 80 96))
+	)
+	(port
+		(pt 96 112)
+		(output)
+		(text "ZF" (rect 0 0 4 5)(font "Arial" (font_size 3)))
+		(text "ZF" (rect 71 107 75 112)(font "Arial" (font_size 3)))
+		(line (pt 96 112)(pt 80 112))
+	)
+	(port
+		(pt 96 128)
+		(output)
+		(text "AF" (rect 0 0 5 5)(font "Arial" (font_size 3)))
+		(text "AF" (rect 70 123 75 128)(font "Arial" (font_size 3)))
+		(line (pt 96 128)(pt 80 128))
+	)
+	(port
+		(pt 96 144)
+		(output)
+		(text "PF" (rect 0 0 5 5)(font "Arial" (font_size 3)))
+		(text "PF" (rect 70 139 75 144)(font "Arial" (font_size 3)))
+		(line (pt 96 144)(pt 80 144))
+	)
+	(port
+		(pt 96 160)
+		(output)
+		(text "CF" (rect 0 0 5 5)(font "Arial" (font_size 3)))
+		(text "CF" (rect 70 155 75 160)(font "Arial" (font_size 3)))
+		(line (pt 96 160)(pt 80 160))
+	)
+	(drawing
+		(rectangle (rect 16 16 80 176))
+	)
+)

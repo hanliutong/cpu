@@ -1,0 +1,21 @@
+module M_ctrl(
+input W_B,
+input [15:0]ABUS,
+input [15:0]Q,
+output [15:0] A_plus,
+output [15:0] Dout
+)
+
+always @(ABUS or W_B)
+if (W_B&&ABUS[0])
+	A_plus = ABUS + 1'b1;
+else A_plus = ABUS;
+
+always @(Q or ABUS[0] or W_B)
+if (W_B&&ABUS[0])
+	Dout = {Q[7:0],Q[15:8]};
+else Dout = {Q[15:8],Q[7:0]};
+
+endmodule
+
+	

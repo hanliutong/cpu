@@ -1,0 +1,26 @@
+module CLK_maker(Crystal,HALT,Start_Reset,clk)
+input Crystal,HALT,Start_Reset;
+output reg clk;
+reg Available_mark = 0;
+reg Reset_mark = 0;
+
+always @ (posedge Start_Reset)
+	if (Available_mark == 0)
+		Available_mark = 1;
+	else 
+		begin
+		Reset_mark = 1;
+		Available_mark = 0;
+		end
+		
+always @ (Reset_mark)
+begin
+	Available_mark = 1;
+	Reset_mark = 0;
+end
+
+always @ (posedge Crystal)
+clk = !clk;
+
+endmodule
+	

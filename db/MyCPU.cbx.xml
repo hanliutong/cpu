@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MyCPU">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MyCPU|ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_brq.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MyCPU|Memory:inst24|LPM_RAM_DQ:inst1|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_2c91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MyCPU|Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block" CBX_FILE_NAME="altsyncram_1c91.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

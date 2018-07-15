@@ -1,0 +1,35 @@
+module CU(
+input FI,DST,SRC,EXC,INT,CLK;
+input [7:0]T;
+input [5:0]OpCode;
+input d,w;
+input [1:0]mod;
+input [2:0]_reg;
+input [2:0]r_m;
+output reg [47:0]
+		{ADDC,SUBC,ANDC,ORC,XORC,NOTC,INCAC,DECAC,IBUS_RA,IBUS_RB,ALU_BUS,
+		RE,WE,R_IBUS,W_B,
+		IBUS_RBL,RBL_IBUS,
+		IBUS_SR,SR_IBUS,SHLC,SHRC,SALC,SARC,ROLC,RORC,
+		IBUS_PC,PCplus1,zero_PC,PU_IBUS,
+		IBUS_IR,
+		IBUS_MAR,MAR_ABUS,MAR_IBUS,
+		BUS_MDR,I_DBUS,MDR_DBUS,MDR_IBUS,
+		MRD,MWR,M_clk,
+		HALT,
+		Tplus1,Tset0,Set_DST,Set_SRC,Set_EXC,Set_INT,Set_FI};
+);
+reg [47:0]temp;
+reg [3:0]cnt;
+
+always @ (posedge clk)
+begin
+cnt = cnt + 1'b1;
+end
+
+always @ (FI or DST or SRC or EXC or INT or T or OpCode or d or w or mod or _reg or r_m)
+begin
+	casez {FI,DST,SRC,EXC,INT,T,OpCode,d,w,mod,_reg,r_m}
+		29'b10000_00000001_??????_?_?_??_???_??? : temp = 12'h0000000A0040;
+		29'b10000_00000010_??????_?_?_??_???_??? : temp = 
+

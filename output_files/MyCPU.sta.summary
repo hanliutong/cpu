@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'IR:inst11|inst'
+Slack : -17.135
+TNS   : -6936.019
+
+Type  : Slow 1200mV 85C Model Setup 'Crystal'
+Slack : -16.258
+TNS   : -6871.783
+
+Type  : Slow 1200mV 85C Model Hold 'IR:inst11|inst'
+Slack : -4.236
+TNS   : -1190.067
+
+Type  : Slow 1200mV 85C Model Hold 'Crystal'
+Slack : -0.883
+TNS   : -7.638
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'IR:inst11|inst'
+Slack : -6.070
+TNS   : -12287.928
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Crystal'
+Slack : -3.201
+TNS   : -1054.066
+
+Type  : Slow 1200mV 0C Model Setup 'IR:inst11|inst'
+Slack : -16.280
+TNS   : -6576.290
+
+Type  : Slow 1200mV 0C Model Setup 'Crystal'
+Slack : -15.340
+TNS   : -6505.592
+
+Type  : Slow 1200mV 0C Model Hold 'IR:inst11|inst'
+Slack : -4.013
+TNS   : -1151.935
+
+Type  : Slow 1200mV 0C Model Hold 'Crystal'
+Slack : -1.038
+TNS   : -10.047
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'IR:inst11|inst'
+Slack : -5.680
+TNS   : -11518.683
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Crystal'
+Slack : -3.201
+TNS   : -1064.758
+
+Type  : Fast 1200mV 0C Model Setup 'IR:inst11|inst'
+Slack : -7.254
+TNS   : -2911.309
+
+Type  : Fast 1200mV 0C Model Setup 'Crystal'
+Slack : -6.660
+TNS   : -2748.912
+
+Type  : Fast 1200mV 0C Model Hold 'IR:inst11|inst'
+Slack : -2.078
+TNS   : -591.318
+
+Type  : Fast 1200mV 0C Model Hold 'Crystal'
+Slack : -0.752
+TNS   : -17.643
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Crystal'
+Slack : -3.000
+TNS   : -656.671
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'IR:inst11|inst'
+Slack : -2.516
+TNS   : -4496.681
+
+------------------------------------------------------------

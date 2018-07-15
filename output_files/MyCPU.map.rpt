@@ -1,0 +1,1353 @@
+Analysis & Synthesis report for MyCPU
+Mon Jul 09 12:21:57 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated
+ 16. Source assignments for Memory:inst24|LPM_RAM_DQ:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated
+ 17. Parameter Settings for User Entity Instance: ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component
+ 18. Parameter Settings for User Entity Instance: Memory:inst24|LPM_RAM_DQ:inst2
+ 19. Parameter Settings for User Entity Instance: Memory:inst24|LPM_RAM_DQ:inst1
+ 20. Parameter Settings for User Entity Instance: PC:inst13|74161:inst
+ 21. Parameter Settings for User Entity Instance: PC:inst13|74161:inst1
+ 22. Parameter Settings for User Entity Instance: PC:inst13|74161:inst2
+ 23. Parameter Settings for User Entity Instance: PC:inst13|74161:inst3
+ 24. lpm_mult Parameter Settings by Entity Instance
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jul 09 12:21:57 2018            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; MyCPU                                            ;
+; Top-level Entity Name              ; MyCPU                                            ;
+; Family                             ; Cyclone III                                      ;
+; Total logic elements               ; 1,382                                            ;
+;     Total combinational functions  ; 1,234                                            ;
+;     Dedicated logic registers      ; 297                                              ;
+; Total registers                    ; 297                                              ;
+; Total pins                         ; 249                                              ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 524,288                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C55F484C8       ;                    ;
+; Top-level entity name                                                      ; MyCPU              ; MyCPU              ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+; MyCPU.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/MyCPU.bdf                               ;         ;
+; MAR.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/MAR.bdf                                 ;         ;
+; IR.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/IR.bdf                                  ;         ;
+; X_IBUS.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/X_IBUS.bdf                              ;         ;
+; ALU.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/ALU.bdf                                 ;         ;
+; tr.v                             ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/tr.v                                    ;         ;
+; PC.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/PC.bdf                                  ;         ;
+; M0.mif                           ; yes             ; User Memory Initialization File    ; C:/Users/Hanliutong/Desktop/cpu/M0.mif                                  ;         ;
+; M1.mif                           ; yes             ; User Memory Initialization File    ; C:/Users/Hanliutong/Desktop/cpu/M1.mif                                  ;         ;
+; Memory.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/Memory.bdf                              ;         ;
+; Timer.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/Timer.bdf                               ;         ;
+; CPU_Cycle.v                      ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/CPU_Cycle.v                             ;         ;
+; beat_Cycle.v                     ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/beat_Cycle.v                            ;         ;
+; MDR_MUX.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/MDR_MUX.bdf                             ;         ;
+; CU.v                             ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/CU.v                                    ;         ;
+; IBUS_X.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/IBUS_X.bdf                              ;         ;
+; RBL.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Hanliutong/Desktop/cpu/RBL.bdf                                 ;         ;
+; MY_REG.v                         ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/MY_REG.v                                ;         ;
+; R_addr.v                         ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/R_addr.v                                ;         ;
+; lpm_mult0.v                      ; yes             ; User Wizard-Generated File         ; C:/Users/Hanliutong/Desktop/cpu/lpm_mult0.v                             ;         ;
+; M_ctrl.v                         ; yes             ; User Verilog HDL File              ; C:/Users/Hanliutong/Desktop/cpu/M_ctrl.v                                ;         ;
+; 74373.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/74373.bdf           ;         ;
+; xor8.bdf                         ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/xor8.bdf            ;         ;
+; 74181.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/74181.bdf           ;         ;
+; 74244b.bdf                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/74244b.bdf          ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mult_brq.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/Hanliutong/Desktop/cpu/db/mult_brq.tdf                         ;         ;
+; 74273.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/74273.bdf           ;         ;
+; 74244.bdf                        ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/74244.bdf           ;         ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_ram_dq.tdf        ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; altram.tdf                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.tdf            ;         ;
+; memmodes.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/memmodes.inc        ;         ;
+; altsyncram.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.inc        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_1c91.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Hanliutong/Desktop/cpu/db/altsyncram_1c91.tdf                  ;         ;
+; db/decode_dra.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/Hanliutong/Desktop/cpu/db/decode_dra.tdf                       ;         ;
+; db/decode_67a.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/Hanliutong/Desktop/cpu/db/decode_67a.tdf                       ;         ;
+; db/mux_tlb.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Hanliutong/Desktop/cpu/db/mux_tlb.tdf                          ;         ;
+; db/altsyncram_2c91.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Hanliutong/Desktop/cpu/db/altsyncram_2c91.tdf                  ;         ;
+; 74161.tdf                        ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/74161.tdf           ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal.inc           ;         ;
+; f74161.bdf                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/f74161.bdf          ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 1,382       ;
+;                                             ;             ;
+; Total combinational functions               ; 1234        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 867         ;
+;     -- 3 input functions                    ; 249         ;
+;     -- <=2 input functions                  ; 118         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 1175        ;
+;     -- arithmetic mode                      ; 59          ;
+;                                             ;             ;
+; Total registers                             ; 297         ;
+;     -- Dedicated logic registers            ; 297         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 249         ;
+; Total memory bits                           ; 524288      ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; Start~input ;
+; Maximum fan-out                             ; 159         ;
+; Total fan-out                               ; 7001        ;
+; Average fan-out                             ; 3.34        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                       ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |MyCPU                                          ; 1234 (0)          ; 297 (0)      ; 524288      ; 0            ; 0       ; 0         ; 249  ; 0            ; |MyCPU                                                                                                                       ; work         ;
+;    |ALU:inst|                                   ; 225 (1)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst                                                                                                              ; work         ;
+;       |74181:inst1|                             ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|74181:inst1                                                                                                  ; work         ;
+;       |74181:inst2|                             ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|74181:inst2                                                                                                  ; work         ;
+;       |74181:inst3|                             ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|74181:inst3                                                                                                  ; work         ;
+;       |74181:inst|                              ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|74181:inst                                                                                                   ; work         ;
+;       |74244b:inst5|                            ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|74244b:inst5                                                                                                 ; work         ;
+;       |74244b:inst6|                            ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|74244b:inst6                                                                                                 ; work         ;
+;       |lpm_mult0:inst4|                         ; 101 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|lpm_mult0:inst4                                                                                              ; work         ;
+;          |lpm_mult:lpm_mult_component|          ; 101 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component                                                                  ; work         ;
+;             |mult_brq:auto_generated|           ; 101 (101)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component|mult_brq:auto_generated                                          ; work         ;
+;       |tr:inst14|                               ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|ALU:inst|tr:inst14                                                                                                    ; work         ;
+;    |CU:inst96|                                  ; 349 (349)         ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|CU:inst96                                                                                                             ; work         ;
+;    |IBUS_X:inst6|                               ; 0 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IBUS_X:inst6                                                                                                          ; work         ;
+;       |74273:inst1|                             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IBUS_X:inst6|74273:inst1                                                                                              ; work         ;
+;       |74273:inst|                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IBUS_X:inst6|74273:inst                                                                                               ; work         ;
+;    |IBUS_X:inst7|                               ; 0 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IBUS_X:inst7                                                                                                          ; work         ;
+;       |74273:inst1|                             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IBUS_X:inst7|74273:inst1                                                                                              ; work         ;
+;       |74273:inst|                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IBUS_X:inst7|74273:inst                                                                                               ; work         ;
+;    |IR:inst11|                                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|IR:inst11                                                                                                             ; work         ;
+;    |MAR:inst15|                                 ; 16 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MAR:inst15                                                                                                            ; work         ;
+;       |74244:inst11|                            ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MAR:inst15|74244:inst11                                                                                               ; work         ;
+;       |74244:inst12|                            ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MAR:inst15|74244:inst12                                                                                               ; work         ;
+;       |74273:inst2|                             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MAR:inst15|74273:inst2                                                                                                ; work         ;
+;       |74273:inst33|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MAR:inst15|74273:inst33                                                                                               ; work         ;
+;    |MDR_MUX:inst14|                             ; 16 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MDR_MUX:inst14                                                                                                        ; work         ;
+;       |74244:inst1|                             ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MDR_MUX:inst14|74244:inst1                                                                                            ; work         ;
+;       |74244:inst|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MDR_MUX:inst14|74244:inst                                                                                             ; work         ;
+;       |74273:inst2|                             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MDR_MUX:inst14|74273:inst2                                                                                            ; work         ;
+;       |74273:inst33|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MDR_MUX:inst14|74273:inst33                                                                                           ; work         ;
+;    |MY_REG:inst2|                               ; 292 (292)         ; 144 (144)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|MY_REG:inst2                                                                                                          ; work         ;
+;    |Memory:inst24|                              ; 131 (2)           ; 8 (0)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24                                                                                                         ; work         ;
+;       |M_ctrl:inst|                             ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|M_ctrl:inst                                                                                             ; work         ;
+;       |X_IBUS:inst5|                            ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|X_IBUS:inst5                                                                                            ; work         ;
+;          |74373:inst1|                          ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|X_IBUS:inst5|74373:inst1                                                                                ; work         ;
+;          |74373:inst|                           ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|X_IBUS:inst5|74373:inst                                                                                 ; work         ;
+;       |lpm_ram_dq:inst1|                        ; 24 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1                                                                                        ; work         ;
+;          |altram:sram|                          ; 24 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1|altram:sram                                                                            ; work         ;
+;             |altsyncram:ram_block|              ; 24 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block                                                       ; work         ;
+;                |altsyncram_2c91:auto_generated| ; 24 (0)            ; 4 (4)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated                        ; work         ;
+;                   |decode_67a:rden_decode|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|decode_67a:rden_decode ; work         ;
+;                   |decode_dra:decode3|          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|decode_dra:decode3     ; work         ;
+;                   |mux_tlb:mux2|                ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|mux_tlb:mux2           ; work         ;
+;       |lpm_ram_dq:inst2|                        ; 24 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2                                                                                        ; work         ;
+;          |altram:sram|                          ; 24 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2|altram:sram                                                                            ; work         ;
+;             |altsyncram:ram_block|              ; 24 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2|altram:sram|altsyncram:ram_block                                                       ; work         ;
+;                |altsyncram_1c91:auto_generated| ; 24 (0)            ; 4 (4)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated                        ; work         ;
+;                   |decode_67a:rden_decode|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|decode_67a:rden_decode ; work         ;
+;                   |decode_dra:decode3|          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|decode_dra:decode3     ; work         ;
+;                   |mux_tlb:mux2|                ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Memory:inst24|lpm_ram_dq:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|mux_tlb:mux2           ; work         ;
+;    |PC:inst13|                                  ; 30 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13                                                                                                             ; work         ;
+;       |74161:inst1|                             ; 9 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst1                                                                                                 ; work         ;
+;          |f74161:sub|                           ; 9 (9)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst1|f74161:sub                                                                                      ; work         ;
+;       |74161:inst2|                             ; 7 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst2                                                                                                 ; work         ;
+;          |f74161:sub|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst2|f74161:sub                                                                                      ; work         ;
+;       |74161:inst3|                             ; 8 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst3                                                                                                 ; work         ;
+;          |f74161:sub|                           ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst3|f74161:sub                                                                                      ; work         ;
+;       |74161:inst|                              ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst                                                                                                  ; work         ;
+;          |f74161:sub|                           ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|PC:inst13|74161:inst|f74161:sub                                                                                       ; work         ;
+;    |RBL:inst16|                                 ; 6 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst16                                                                                                            ; work         ;
+;       |74244:inst2|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst16|74244:inst2                                                                                                ; work         ;
+;       |74244:inst3|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst16|74244:inst3                                                                                                ; work         ;
+;       |74273:inst1|                             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst16|74273:inst1                                                                                                ; work         ;
+;       |74273:inst|                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst16|74273:inst                                                                                                 ; work         ;
+;    |RBL:inst9|                                  ; 0 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst9                                                                                                             ; work         ;
+;       |74273:inst1|                             ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst9|74273:inst1                                                                                                 ; work         ;
+;       |74273:inst|                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|RBL:inst9|74273:inst                                                                                                  ; work         ;
+;    |R_addr:inst17|                              ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|R_addr:inst17                                                                                                         ; work         ;
+;    |Timer:inst12|                               ; 17 (2)            ; 13 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Timer:inst12                                                                                                          ; work         ;
+;       |CPU_Cycle:inst2|                         ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Timer:inst12|CPU_Cycle:inst2                                                                                          ; work         ;
+;       |beat_Cycle:inst3|                        ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|Timer:inst12|beat_Cycle:inst3                                                                                         ; work         ;
+;    |X_IBUS:inst4|                               ; 93 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|X_IBUS:inst4                                                                                                          ; work         ;
+;       |74373:inst1|                             ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|X_IBUS:inst4|74373:inst1                                                                                              ; work         ;
+;       |74373:inst|                              ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MyCPU|X_IBUS:inst4|74373:inst                                                                                               ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+--------+
+; Name                                                                                                      ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF    ;
++-----------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+--------+
+; Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32768        ; 8            ; --           ; --           ; 262144 ; M1.mif ;
+; Memory:inst24|lpm_ram_dq:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32768        ; 8            ; --           ; --           ; 262144 ; M0.mif ;
++-----------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                         ;
++--------+--------------+---------+--------------+--------------+---------------------------------+---------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                 ; IP Include File                             ;
++--------+--------------+---------+--------------+--------------+---------------------------------+---------------------------------------------+
+; Altera ; LPM_MULT     ; 13.0    ; N/A          ; N/A          ; |MyCPU|ALU:inst|lpm_mult0:inst4 ; C:/Users/Hanliutong/Desktop/cpu/lpm_mult0.v ;
++--------+--------------+---------+--------------+--------------+---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; CU:inst96|Op_MOV4                                  ; CU:inst96|Equal4    ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; MY_REG:inst2|Reg_IP[0..15]             ; Stuck at GND due to stuck port clock_enable ;
+; Timer:inst12|CPU_Cycle:inst2|INT       ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 17 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 297   ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 145   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 137   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Timer:inst12|CPU_Cycle:inst2|FI        ; 12      ;
+; Timer:inst12|beat_Cycle:inst3|T[0]     ; 45      ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |MyCPU|Timer:inst12|beat_Cycle:inst3|T[7] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |MyCPU|Timer:inst12|CPU_Cycle:inst2|SRC   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_AX[15]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_BX[15]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_CX[12]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_DX[8]             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_AX[4]             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_BX[1]             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_CX[1]             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Reg_DX[3]             ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Rout[7]               ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 64 LEs               ; 56 LEs                 ; Yes        ; |MyCPU|MY_REG:inst2|Rout[13]              ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |MyCPU|R_addr:inst17|R[5]                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |MyCPU|R_addr:inst17|R[2]                 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |MyCPU|R_addr:inst17|R[4]                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memory:inst24|LPM_RAM_DQ:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component ;
++------------------------------------------------+-------------+------------------------------------+
+; Parameter Name                                 ; Value       ; Type                               ;
++------------------------------------------------+-------------+------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                     ;
+; LPM_WIDTHA                                     ; 8           ; Signed Integer                     ;
+; LPM_WIDTHB                                     ; 8           ; Signed Integer                     ;
+; LPM_WIDTHP                                     ; 16          ; Signed Integer                     ;
+; LPM_WIDTHR                                     ; 0           ; Untyped                            ;
+; LPM_WIDTHS                                     ; 1           ; Untyped                            ;
+; LPM_REPRESENTATION                             ; UNSIGNED    ; Untyped                            ;
+; LPM_PIPELINE                                   ; 0           ; Untyped                            ;
+; LATENCY                                        ; 0           ; Untyped                            ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                            ;
+; INPUT_B_IS_CONSTANT                            ; NO          ; Untyped                            ;
+; USE_EAB                                        ; OFF         ; Untyped                            ;
+; MAXIMIZE_SPEED                                 ; 5           ; Untyped                            ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                            ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped                            ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K                ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; NO          ; Untyped                            ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                            ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                            ;
+; CBXI_PARAMETER                                 ; mult_brq    ; Untyped                            ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                            ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                            ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                            ;
++------------------------------------------------+-------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory:inst24|LPM_RAM_DQ:inst2 ;
++------------------------+-------------+--------------------------------------+
+; Parameter Name         ; Value       ; Type                                 ;
++------------------------+-------------+--------------------------------------+
+; LPM_WIDTH              ; 8           ; Untyped                              ;
+; LPM_WIDTHAD            ; 15          ; Untyped                              ;
+; LPM_NUMWORDS           ; 32768       ; Untyped                              ;
+; LPM_INDATA             ; REGISTERED  ; Untyped                              ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED  ; Untyped                              ;
+; LPM_OUTDATA            ; REGISTERED  ; Untyped                              ;
+; LPM_FILE               ; M0.mif      ; Untyped                              ;
+; USE_EAB                ; ON          ; Untyped                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                              ;
+; CBXI_PARAMETER         ; NOTHING     ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                       ;
++------------------------+-------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory:inst24|LPM_RAM_DQ:inst1 ;
++------------------------+-------------+--------------------------------------+
+; Parameter Name         ; Value       ; Type                                 ;
++------------------------+-------------+--------------------------------------+
+; LPM_WIDTH              ; 8           ; Untyped                              ;
+; LPM_WIDTHAD            ; 15          ; Untyped                              ;
+; LPM_NUMWORDS           ; 32768       ; Untyped                              ;
+; LPM_INDATA             ; REGISTERED  ; Untyped                              ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED  ; Untyped                              ;
+; LPM_OUTDATA            ; REGISTERED  ; Untyped                              ;
+; LPM_FILE               ; M1.mif      ; Untyped                              ;
+; USE_EAB                ; ON          ; Untyped                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                              ;
+; CBXI_PARAMETER         ; NOTHING     ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                       ;
++------------------------+-------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:inst13|74161:inst ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:inst13|74161:inst1 ;
++------------------------+-------------+-----------------------------+
+; Parameter Name         ; Value       ; Type                        ;
++------------------------+-------------+-----------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                     ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE              ;
++------------------------+-------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:inst13|74161:inst2 ;
++------------------------+-------------+-----------------------------+
+; Parameter Name         ; Value       ; Type                        ;
++------------------------+-------------+-----------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                     ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE              ;
++------------------------+-------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:inst13|74161:inst3 ;
++------------------------+-------------+-----------------------------+
+; Parameter Name         ; Value       ; Type                        ;
++------------------------+-------------+-----------------------------+
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                     ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE              ;
++------------------------+-------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                               ;
++---------------------------------------+------------------------------------------------------+
+; Name                                  ; Value                                                ;
++---------------------------------------+------------------------------------------------------+
+; Number of entity instances            ; 1                                                    ;
+; Entity Instance                       ; ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component ;
+;     -- LPM_WIDTHA                     ; 8                                                    ;
+;     -- LPM_WIDTHB                     ; 8                                                    ;
+;     -- LPM_WIDTHP                     ; 16                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; NO                                                   ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
++---------------------------------------+------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon Jul 09 12:21:46 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MyCPU -c MyCPU
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file mycpu.bdf
+    Info (12023): Found entity 1: MyCPU
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.bdf
+    Info (12023): Found entity 1: CPU
+Info (12021): Found 1 design units, including 1 entities, in source file mar.bdf
+    Info (12023): Found entity 1: MAR
+Info (12021): Found 1 design units, including 1 entities, in source file registers.bdf
+    Info (12023): Found entity 1: registers
+Info (12021): Found 1 design units, including 1 entities, in source file mux4_1.bdf
+    Info (12023): Found entity 1: Mux4_1
+Info (12021): Found 1 design units, including 1 entities, in source file mux3_1.bdf
+    Info (12023): Found entity 1: Mux3_1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer_h2l.bdf
+    Info (12023): Found entity 1: Multiplexer_H2L
+Info (12021): Found 1 design units, including 1 entities, in source file ir.bdf
+    Info (12023): Found entity 1: IR
+Info (12021): Found 1 design units, including 1 entities, in source file demultiplexer.bdf
+    Info (12023): Found entity 1: Demultiplexer
+Info (12021): Found 1 design units, including 1 entities, in source file 6702.bdf
+    Info (12023): Found entity 1: 6702
+Info (12021): Found 1 design units, including 1 entities, in source file shifting_register.v
+    Info (12023): Found entity 1: shifting_register
+Info (12021): Found 1 design units, including 1 entities, in source file x_ibus.bdf
+    Info (12023): Found entity 1: X_IBUS
+Info (12021): Found 1 design units, including 1 entities, in source file alu.bdf
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 1 design units, including 1 entities, in source file tr.v
+    Info (12023): Found entity 1: tr
+Info (12021): Found 1 design units, including 1 entities, in source file fr.bdf
+    Info (12023): Found entity 1: FR
+Info (12021): Found 1 design units, including 1 entities, in source file pc.bdf
+    Info (12023): Found entity 1: PC
+Info (12021): Found 1 design units, including 1 entities, in source file memory.bdf
+    Info (12023): Found entity 1: Memory
+Info (12021): Found 1 design units, including 1 entities, in source file clk_maker.v
+    Info (12023): Found entity 1: CLK_maker
+Info (12021): Found 1 design units, including 1 entities, in source file timer.bdf
+    Info (12023): Found entity 1: Timer
+Info (12021): Found 1 design units, including 1 entities, in source file cpu_cycle.v
+    Info (12023): Found entity 1: CPU_Cycle
+Info (12021): Found 1 design units, including 1 entities, in source file beat_cycle.v
+    Info (12023): Found entity 1: beat_Cycle
+Info (12021): Found 1 design units, including 1 entities, in source file test.bdf
+    Info (12023): Found entity 1: test
+Info (12021): Found 1 design units, including 1 entities, in source file alu_test.bdf
+    Info (12023): Found entity 1: ALU_test
+Info (12021): Found 1 design units, including 1 entities, in source file regw2r.v
+    Info (12023): Found entity 1: REGW2R
+Info (12021): Found 1 design units, including 1 entities, in source file mdr_mux.bdf
+    Info (12023): Found entity 1: MDR_MUX
+Info (12021): Found 1 design units, including 1 entities, in source file r_adrr.bdf
+    Info (12023): Found entity 1: R_adrr
+Info (12021): Found 1 design units, including 1 entities, in source file modrm2r.v
+    Info (12023): Found entity 1: ModRM2R
+Info (12021): Found 1 design units, including 1 entities, in source file cu.v
+    Info (12023): Found entity 1: CU
+Info (12021): Found 1 design units, including 1 entities, in source file cu_timer.bdf
+    Info (12023): Found entity 1: CU_Timer
+Info (12021): Found 1 design units, including 1 entities, in source file cpu_test_withoutcu.bdf
+    Info (12023): Found entity 1: CPU_test_withoutCU
+Info (12021): Found 1 design units, including 1 entities, in source file ibus_x.bdf
+    Info (12023): Found entity 1: IBUS_X
+Info (12021): Found 1 design units, including 1 entities, in source file rbl.bdf
+    Info (12023): Found entity 1: RBL
+Info (12021): Found 1 design units, including 1 entities, in source file my_reg.v
+    Info (12023): Found entity 1: MY_REG
+Info (12021): Found 1 design units, including 1 entities, in source file r_addr.v
+    Info (12023): Found entity 1: R_addr
+Info (12021): Found 1 design units, including 1 entities, in source file lpm_mult0.v
+    Info (12023): Found entity 1: lpm_mult0
+Info (12021): Found 1 design units, including 1 entities, in source file m_ctrl.v
+    Info (12023): Found entity 1: M_ctrl
+Warning (10236): Verilog HDL Implicit Net warning at R_addr.v(13): created implicit net for "MD"
+Info (12127): Elaborating entity "MyCPU" for the top level hierarchy
+Info (12128): Elaborating entity "Timer" for hierarchy "Timer:inst12"
+Info (12128): Elaborating entity "CPU_Cycle" for hierarchy "Timer:inst12|CPU_Cycle:inst2"
+Info (12128): Elaborating entity "beat_Cycle" for hierarchy "Timer:inst12|beat_Cycle:inst3"
+Info (12128): Elaborating entity "CU" for hierarchy "CU:inst96"
+Warning (10240): Verilog HDL Always Construct warning at CU.v(38): inferring latch(es) for variable "Op_MOV4", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(194): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(195): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(196): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(197): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(198): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(198): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(198): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(198): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(199): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(200): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(201): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(201): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(201): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(203): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(204): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(205): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(205): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(205): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(205): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(205): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(206): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(207): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(208): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(208): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(208): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(208): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(208): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(209): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(211): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_MOV2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(212): variable "Op_MOV4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(213): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(213): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(213): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(213): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(213): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(214): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_MOV2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "FI" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(215): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(216): variable "Op_MOV4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(218): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(218): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(218): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(218): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(219): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(220): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(220): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(220): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(220): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(221): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(221): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(221): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(221): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(222): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(222): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(222): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(222): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(223): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(223): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(223): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(223): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(224): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(224): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(224): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(224): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(224): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(224): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(225): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(225): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(225): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(225): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(226): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(227): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "Op_JMP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(228): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "Op_MOV2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(230): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(231): variable "Op_MOV4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "Op_MOV2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "Op_INCAC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(232): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "Op_MOV2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(234): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "Op_MOV3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "Op_PUSH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(235): variable "Op_POP" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "SRC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "DST" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(237): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(238): variable "cnt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(238): variable "EXC" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(238): variable "T" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(238): variable "Op_MOV1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(238): variable "Op_ADD1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at CU.v(238): variable "Op_MOV4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10034): Output port "Set_INT" at CU.v(12) has no driver
+Warning (10034): Output port "NOTC" at CU.v(13) has no driver
+Warning (10034): Output port "SHLC" at CU.v(16) has no driver
+Warning (10034): Output port "SHRC" at CU.v(16) has no driver
+Warning (10034): Output port "SALC" at CU.v(16) has no driver
+Warning (10034): Output port "SARC" at CU.v(16) has no driver
+Warning (10034): Output port "ROLC" at CU.v(16) has no driver
+Warning (10034): Output port "RORC" at CU.v(16) has no driver
+Warning (10034): Output port "zero_PC" at CU.v(17) has no driver
+Info (10041): Inferred latch for "Op_MOV4" at CU.v(56)
+Info (12128): Elaborating entity "IR" for hierarchy "IR:inst11"
+Info (12128): Elaborating entity "X_IBUS" for hierarchy "X_IBUS:inst4"
+Info (12128): Elaborating entity "74373" for hierarchy "X_IBUS:inst4|74373:inst"
+Info (12130): Elaborated megafunction instantiation "X_IBUS:inst4|74373:inst"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst"
+Warning (275011): Block or symbol "XOR8" of instance "inst7" overlaps another block or symbol
+Info (12128): Elaborating entity "XOR8" for hierarchy "ALU:inst|XOR8:inst7"
+Info (12130): Elaborated megafunction instantiation "ALU:inst|XOR8:inst7"
+Info (12128): Elaborating entity "74181" for hierarchy "ALU:inst|74181:inst1"
+Info (12130): Elaborated megafunction instantiation "ALU:inst|74181:inst1"
+Info (12128): Elaborating entity "tr" for hierarchy "ALU:inst|tr:inst14"
+Info (10264): Verilog HDL Case Statement information at tr.v(6): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "74244b" for hierarchy "ALU:inst|74244b:inst5"
+Info (12130): Elaborated megafunction instantiation "ALU:inst|74244b:inst5"
+Info (12128): Elaborating entity "lpm_mult0" for hierarchy "ALU:inst|lpm_mult0:inst4"
+Info (12128): Elaborating entity "lpm_mult" for hierarchy "ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component"
+Info (12130): Elaborated megafunction instantiation "ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component"
+Info (12133): Instantiated megafunction "ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "DEDICATED_MULTIPLIER_CIRCUITRY=NO,MAXIMIZE_SPEED=5"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_MULT"
+    Info (12134): Parameter "lpm_widtha" = "8"
+    Info (12134): Parameter "lpm_widthb" = "8"
+    Info (12134): Parameter "lpm_widthp" = "16"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_brq.tdf
+    Info (12023): Found entity 1: mult_brq
+Info (12128): Elaborating entity "mult_brq" for hierarchy "ALU:inst|lpm_mult0:inst4|lpm_mult:lpm_mult_component|mult_brq:auto_generated"
+Info (12128): Elaborating entity "IBUS_X" for hierarchy "IBUS_X:inst6"
+Info (12128): Elaborating entity "74273" for hierarchy "IBUS_X:inst6|74273:inst"
+Info (12130): Elaborated megafunction instantiation "IBUS_X:inst6|74273:inst"
+Info (12128): Elaborating entity "MDR_MUX" for hierarchy "MDR_MUX:inst14"
+Info (12128): Elaborating entity "74244" for hierarchy "MDR_MUX:inst14|74244:inst11"
+Info (12130): Elaborated megafunction instantiation "MDR_MUX:inst14|74244:inst11"
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:inst24"
+Info (12128): Elaborating entity "M_ctrl" for hierarchy "Memory:inst24|M_ctrl:inst"
+Warning (10235): Verilog HDL Always Construct warning at M_ctrl.v(15): variable "DBUS" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at M_ctrl.v(20): variable "DBUS" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "LPM_RAM_DQ" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2"
+Info (12130): Elaborated megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst2"
+Info (12133): Instantiated megafunction "Memory:inst24|LPM_RAM_DQ:inst2" with the following parameter:
+    Info (12134): Parameter "LPM_FILE" = "M0.mif"
+    Info (12134): Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_WIDTHAD" = "15"
+Info (12128): Elaborating entity "altram" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram"
+Warning (287001): Assertion warning: altram does not support Cyclone III device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Cyclone III devices
+Info (12131): Elaborated megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram", which is child of megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst2"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block"
+Info (12131): Elaborated megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1c91.tdf
+    Info (12023): Found entity 1: altsyncram_1c91
+Info (12128): Elaborating entity "altsyncram_1c91" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dra.tdf
+    Info (12023): Found entity 1: decode_dra
+Info (12128): Elaborating entity "decode_dra" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|decode_dra:decode3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_67a.tdf
+    Info (12023): Found entity 1: decode_67a
+Info (12128): Elaborating entity "decode_67a" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|decode_67a:rden_decode"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_tlb.tdf
+    Info (12023): Found entity 1: mux_tlb
+Info (12128): Elaborating entity "mux_tlb" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst2|altram:sram|altsyncram:ram_block|altsyncram_1c91:auto_generated|mux_tlb:mux2"
+Info (12128): Elaborating entity "LPM_RAM_DQ" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst1"
+Info (12130): Elaborated megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst1"
+Info (12133): Instantiated megafunction "Memory:inst24|LPM_RAM_DQ:inst1" with the following parameter:
+    Info (12134): Parameter "LPM_FILE" = "M1.mif"
+    Info (12134): Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_WIDTHAD" = "15"
+Info (12128): Elaborating entity "altram" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst1|altram:sram"
+Warning (287001): Assertion warning: altram does not support Cyclone III device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Cyclone III devices
+Info (12131): Elaborated megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst1|altram:sram", which is child of megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst1"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst1|altram:sram|altsyncram:ram_block"
+Info (12131): Elaborated megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst1|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memory:inst24|LPM_RAM_DQ:inst1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2c91.tdf
+    Info (12023): Found entity 1: altsyncram_2c91
+Info (12128): Elaborating entity "altsyncram_2c91" for hierarchy "Memory:inst24|LPM_RAM_DQ:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated"
+Info (12128): Elaborating entity "MAR" for hierarchy "MAR:inst15"
+Info (12128): Elaborating entity "RBL" for hierarchy "RBL:inst16"
+Info (12128): Elaborating entity "MY_REG" for hierarchy "MY_REG:inst2"
+Info (10264): Verilog HDL Case Statement information at MY_REG.v(15): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at MY_REG.v(36): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at MY_REG.v(61): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at MY_REG.v(82): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "R_addr" for hierarchy "R_addr:inst17"
+Info (12128): Elaborating entity "PC" for hierarchy "PC:inst13"
+Info (12128): Elaborating entity "74161" for hierarchy "PC:inst13|74161:inst"
+Info (12130): Elaborated megafunction instantiation "PC:inst13|74161:inst"
+Info (12128): Elaborating entity "f74161" for hierarchy "PC:inst13|74161:inst|f74161:sub"
+Info (12131): Elaborated megafunction instantiation "PC:inst13|74161:inst|f74161:sub", which is child of megafunction instantiation "PC:inst13|74161:inst"
+Info (12128): Elaborating entity "74161" for hierarchy "PC:inst13|74161:inst1"
+Info (12130): Elaborated megafunction instantiation "PC:inst13|74161:inst1"
+Info (12128): Elaborating entity "74161" for hierarchy "PC:inst13|74161:inst3"
+Info (12130): Elaborated megafunction instantiation "PC:inst13|74161:inst3"
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|19" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|18" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|17" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|16" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|15" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|14" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|13" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst1|12" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|19" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|18" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|17" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|16" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|15" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|14" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|13" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst10|74373:inst|12" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|19" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|18" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|17" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|16" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|15" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|14" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|13" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst1|12" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|19" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|18" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|17" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|16" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|15" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|14" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|13" is permanently enabled
+Warning (14026): LATCH primitive "Memory:inst24|X_IBUS:inst5|74373:inst|12" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|19" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|18" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|17" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|16" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|15" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|14" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|13" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst1|12" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|19" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|18" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|17" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|16" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|15" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|14" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|13" is permanently enabled
+Warning (14026): LATCH primitive "X_IBUS:inst4|74373:inst|12" is permanently enabled
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer CU:inst96|Op_MOV3
+    Warning (19017): Found clock multiplexer CU:inst96|Op_MOV3~synth
+    Warning (19017): Found clock multiplexer CU:inst96|Op_MOV1
+    Warning (19017): Found clock multiplexer Memory:inst24|M_ctrl:inst|A_plus[0]
+Info (13014): Ignored 232 buffer(s)
+    Info (13015): Ignored 18 CARRY buffer(s)
+    Info (13016): Ignored 8 CARRY_SUM buffer(s)
+    Info (13019): Ignored 206 SOFT buffer(s)
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer CU:inst96|always0~synth
+    Warning (19017): Found clock multiplexer CU:inst96|always0~synth
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|26" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|address_reg_a[1]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|27" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|address_reg_a[0]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|31" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|36" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|11" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|10" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|6" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst12|1" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|26" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|27" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|31" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|36" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|11" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|10" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|6" to the node "Memory:inst24|lpm_ram_dq:inst1|altram:sram|altsyncram:ram_block|altsyncram_2c91:auto_generated|ram_block1a0" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "MAR:inst15|74244:inst11|1" to the node "Memory:inst24|M_ctrl:inst|always0" into an OR gate
+Warning (13044): Always-enabled tri-state buffer(s) removed
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|26" to the node "MDR_MUX:inst14|74273:inst33|12" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|27" to the node "MDR_MUX:inst14|74273:inst33|13" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|31" to the node "MDR_MUX:inst14|74273:inst33|14" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|36" to the node "MDR_MUX:inst14|74273:inst33|15" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|11" to the node "MDR_MUX:inst14|74273:inst33|16" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|10" to the node "MDR_MUX:inst14|74273:inst33|17" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|6" to the node "MDR_MUX:inst14|74273:inst33|18" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst1|1" to the node "MDR_MUX:inst14|74273:inst33|19" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|26" to the node "MDR_MUX:inst14|74273:inst2|12" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|27" to the node "MDR_MUX:inst14|74273:inst2|13" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|31" to the node "MDR_MUX:inst14|74273:inst2|14" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|36" to the node "MDR_MUX:inst14|74273:inst2|15" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|11" to the node "MDR_MUX:inst14|74273:inst2|16" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|10" to the node "MDR_MUX:inst14|74273:inst2|17" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|6" to the node "MDR_MUX:inst14|74273:inst2|18" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "MDR_MUX:inst14|74244:inst|1" to the node "MDR_MUX:inst14|74273:inst2|19" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|11" to the node "jieguo[15]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|10" to the node "jieguo[14]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|6" to the node "jieguo[13]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|1" to the node "jieguo[12]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|26" to the node "jieguo[11]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|27" to the node "jieguo[10]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|31" to the node "jieguo[9]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|36" to the node "jieguo[8]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|11" to the node "jieguo[7]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|10" to the node "jieguo[6]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|6" to the node "jieguo[5]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|1" to the node "jieguo[4]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|26" to the node "jieguo[3]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|27" to the node "jieguo[2]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|31" to the node "jieguo[1]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|36" to the node "jieguo[0]" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|11" to the node "X_IBUS:inst4|74373:inst1|74" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|10" to the node "X_IBUS:inst4|74373:inst1|73" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|6" to the node "X_IBUS:inst4|74373:inst1|72" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|1" to the node "X_IBUS:inst4|74373:inst1|71" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|26" to the node "X_IBUS:inst4|74373:inst1|70" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|27" to the node "X_IBUS:inst4|74373:inst1|69" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|31" to the node "X_IBUS:inst4|74373:inst1|68" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst5|36" to the node "X_IBUS:inst4|74373:inst1|67" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|11" to the node "X_IBUS:inst4|74373:inst|74" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|10" to the node "X_IBUS:inst4|74373:inst|73" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|6" to the node "X_IBUS:inst4|74373:inst|72" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|1" to the node "X_IBUS:inst4|74373:inst|71" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|26" to the node "X_IBUS:inst4|74373:inst|70" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|27" to the node "X_IBUS:inst4|74373:inst|69" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|31" to the node "X_IBUS:inst4|74373:inst|68" into a wire
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "ALU:inst|74244b:inst6|36" to the node "X_IBUS:inst4|74373:inst|67" into a wire
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|74" to the node "IR:inst11|insta" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|73" to the node "IR:inst11|inst1" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|72" to the node "IR:inst11|inst2" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|71" to the node "IR:inst11|inst3" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|70" to the node "IR:inst11|inst4" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|69" to the node "IR:inst11|inst" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|68" to the node "IR:inst11|inst5" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst1|67" to the node "IR:inst11|inst6" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|74" to the node "IR:inst11|inst7" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|73" to the node "IR:inst11|inst8" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|72" to the node "IR:inst11|inst9" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|71" to the node "IR:inst11|inst10" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|70" to the node "IR:inst11|inst11" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|69" to the node "IR:inst11|inst12" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|68" to the node "IR:inst11|inst13" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "X_IBUS:inst4|74373:inst|67" to the node "IR:inst11|inst14" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|74" to the node "Memory:inst24|M_ctrl:inst|Dout[15]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|73" to the node "Memory:inst24|M_ctrl:inst|Dout[14]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|72" to the node "Memory:inst24|M_ctrl:inst|Dout[13]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|71" to the node "Memory:inst24|M_ctrl:inst|Dout[12]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|70" to the node "Memory:inst24|M_ctrl:inst|Dout[11]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|69" to the node "Memory:inst24|M_ctrl:inst|Dout[10]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|68" to the node "Memory:inst24|M_ctrl:inst|Dout[9]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst1|67" to the node "Memory:inst24|M_ctrl:inst|Dout[8]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|74" to the node "Memory:inst24|M_ctrl:inst|Dout[15]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|73" to the node "Memory:inst24|M_ctrl:inst|Dout[14]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|72" to the node "Memory:inst24|M_ctrl:inst|Dout[13]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|71" to the node "Memory:inst24|M_ctrl:inst|Dout[12]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|70" to the node "Memory:inst24|M_ctrl:inst|Dout[11]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|69" to the node "Memory:inst24|M_ctrl:inst|Dout[10]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|68" to the node "Memory:inst24|M_ctrl:inst|Dout[9]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "Memory:inst24|X_IBUS:inst5|74373:inst|67" to the node "Memory:inst24|M_ctrl:inst|Dout[8]" into an OR gate
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "INT" is stuck at GND
+    Warning (13410): Pin "zero_PC" is stuck at GND
+    Warning (13410): Pin "temp[42]" is stuck at GND
+    Warning (13410): Pin "temp[28]" is stuck at GND
+    Warning (13410): Pin "temp[27]" is stuck at GND
+    Warning (13410): Pin "temp[26]" is stuck at GND
+    Warning (13410): Pin "temp[25]" is stuck at GND
+    Warning (13410): Pin "temp[24]" is stuck at GND
+    Warning (13410): Pin "temp[23]" is stuck at GND
+    Warning (13410): Pin "temp[20]" is stuck at GND
+    Warning (13410): Pin "temp[7]" is stuck at GND
+    Warning (13410): Pin "temp[1]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1715 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 247 output pins
+    Info (21061): Implemented 1402 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 528 warnings
+    Info: Peak virtual memory: 4659 megabytes
+    Info: Processing ended: Mon Jul 09 12:21:57 2018
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
+
+

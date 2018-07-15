@@ -1,0 +1,115 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+# Date created = 18:59:02  June 28, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		MyCPU_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C55F484C8
+set_global_assignment -name TOP_LEVEL_ENTITY MyCPU
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:59:02  JUNE 28, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name BDF_FILE MyCPU.bdf
+set_global_assignment -name BDF_FILE CPU.bdf
+set_global_assignment -name BDF_FILE MAR.bdf
+set_global_assignment -name BDF_FILE registers.bdf
+set_global_assignment -name BDF_FILE Mux4_1.bdf
+set_global_assignment -name BDF_FILE Mux3_1.bdf
+set_global_assignment -name BDF_FILE Multiplexer_H2L.bdf
+set_global_assignment -name BDF_FILE IR.bdf
+set_global_assignment -name BDF_FILE Demultiplexer.bdf
+set_global_assignment -name BDF_FILE 6702.bdf
+set_global_assignment -name VERILOG_FILE shifting_register.v
+set_global_assignment -name BDF_FILE X_IBUS.bdf
+set_global_assignment -name BDF_FILE ALU.bdf
+set_global_assignment -name VERILOG_FILE tr.v
+set_global_assignment -name BDF_FILE FR.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ALU_BUS.vwf
+set_global_assignment -name BDF_FILE PC.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE PC.vwf
+set_global_assignment -name MIF_FILE M0.mif
+set_global_assignment -name MIF_FILE M1.mif
+set_global_assignment -name BDF_FILE Memory.bdf
+set_global_assignment -name VERILOG_FILE CLK_maker.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE CLK_maker.vwf
+set_global_assignment -name BDF_FILE Timer.bdf
+set_global_assignment -name VERILOG_FILE CPU_Cycle.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE CPU_Cycle.vwf
+set_global_assignment -name VERILOG_FILE beat_Cycle.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE beat_Cycle.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Timer.vwf
+set_global_assignment -name BDF_FILE test.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE test.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Memory.vwf
+set_global_assignment -name BDF_FILE ALU_test.bdf
+set_global_assignment -name VERILOG_FILE REGW2R.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE X_IBUS_TSET.vwf
+set_global_assignment -name BDF_FILE MDR_MUX.bdf
+set_global_assignment -name BDF_FILE R_adrr.bdf
+set_global_assignment -name VERILOG_FILE ModRM2R.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE R_addr.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE MAR_TEST.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE MyCPU_test1.vwf
+set_global_assignment -name VERILOG_FILE CU.v
+set_global_assignment -name BDF_FILE CU_Timer.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE CU_Timer_test.bdf.vwf
+set_global_assignment -name BDF_FILE CPU_test_withoutCU.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE CPU_test.vwf
+set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
+set_global_assignment -name BDF_FILE IBUS_X.bdf
+set_global_assignment -name BDF_FILE RBL.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE registers.vwf
+set_global_assignment -name VERILOG_FILE MY_REG.v
+set_global_assignment -name VERILOG_FILE R_addr.v
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name QIP_FILE lpm_mult0.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE ALU.vwf
+set_global_assignment -name VERILOG_FILE M_ctrl.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Hanliutong/Desktop/cpu/CPU_test.vwf"
